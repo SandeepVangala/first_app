@@ -1,0 +1,27 @@
+<table border="1" style="width:100%">	
+	<tr>
+		<th>Id</th>
+		<th>name</th>
+		<th>subject</th>
+		<th>description</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	
+	<% @blogs.each do|blog| %>
+	    <tr>
+	    	 <td><%= blog.id %> </td>
+	    	 <td><%= blog.name %></td>
+			 <td><%= blog.subject %></td>
+			 <td><%= blog.description %></td>
+			 <td><%=link_to "Show", blog_path(blog.id) %></td>
+			 <td><%=link_to "Delete", blog_path(blog.id), method: :delete, data: { confirm: 'R u wana delete?'} %></td>
+			 <td><%=link_to "edit",edit_blog_path(blog.id)%></td>
+	   </tr>
+	<% end %>
+</table>
+<%= session[:testing]%>
+<% cookies[:testing]= Time.now%>
+<%# cookies.delete :testing %>
+<%= cookies[:testing] %>

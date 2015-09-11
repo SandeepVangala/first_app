@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsBlog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+sandeep header
+<%= yield %>
+sandeep footer
+</body>
+</html>
+
+
+
+form, 
+input types ( textfield, textarea, radiobutton ,checkbox, select)
+<tiel>, h1, anchor tag, p tag, br tag, 
+what is body, head in html
+div tag, span tag
+
+id, class
+
+
+<!-- 
+def testing
+	p "test"
+	yield
+	yield
+	p "second"
+end
+
+testing{p "third"} 
+AactionView::Base -->
+
+<!-- 
+def execute(template)
+    send(template.method, template.locals) do |*names|
+      instance_variable_get "@content_for_#{names.first || 'layout'}"
+    end
+  end -->

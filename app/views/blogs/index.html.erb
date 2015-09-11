@@ -1,0 +1,11 @@
+<center>
+	<h2>
+		Welcome Rails Blog
+	</h2>
+</center>
+<%= session[:testing]%>
+
+<%=link_to "create new blog", new_blog_path%>
+<%=link_to "Show all blogs", dashboard_blogs_path%>
+
+<!--rake routes | grep blogs -->
