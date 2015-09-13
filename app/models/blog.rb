@@ -1,13 +1,14 @@
 class Blog < ActiveRecord::Base
 	#validates :name, format: { with: /\A [A-Za-z]+\z/, message:"only allow letters"}
-	around_save :print_blog_name
+	validates :name, presence:true
+	around_create :ensure_name_has_value
 
-	def print_blog_name
-		p "+++++++++"
-		p "the blog name is #{self.name}"
+	protected
+
+	def ensure_name_has_value
+		p "testing"
 		yield
-		p "+++++++++"
-		p "the blog name is #{self.description}"
-	end
+		p "testing end"
+    end 
 end
 	
